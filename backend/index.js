@@ -7,12 +7,16 @@ import recordsRoute from "./routes/recordsRoute.js";
 const app = express();
 
 //MIDDLEWARE
+//parse application/json
 app.use(express.json());
-app.use(cors({
-    origin:"http://localhost:3000",
-    methods:["GET,HEAD,PUT,PATCH,POST,DELETE"],
-    allowedHeaders:"Content-Type"
-}));
+
+//for handling CORS policy
+app.use(cors());
+// app.use(cors({
+//     origin:"http://localhost:3000",
+//     // methods:["GET,HEAD,PUT,PATCH,POST,DELETE"],
+//     // allowedHeaders:"Content-Type"
+// }));
 
 app.get("/", (request, response) => {
     console.log(request);
