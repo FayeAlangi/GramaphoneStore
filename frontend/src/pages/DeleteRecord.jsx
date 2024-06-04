@@ -26,7 +26,7 @@ const DeleteRecord = () => {
             });
     };
   return (
-    <div className='p-4'>
+    <div className='p-4 font-sans font-light'>
         <BackButton/>
         <h1 className='text-3xl my-4'>Delete Record</h1>
         {loading?<Spinner/> :''}

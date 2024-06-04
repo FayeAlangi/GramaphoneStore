@@ -1,9 +1,10 @@
 import express, { response } from "express";
-import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import cors from "cors";
 import recordsRoute from "./routes/recordsRoute.js";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 
 //MIDDLEWARE
@@ -19,15 +20,17 @@ app.use(cors());
 // }));
 
 app.get("/", (request, response) => {
-    console.log(request);
-    return response.status(200).send("Hello To GramaphoneStore!");
-  });
+  console.log(request);
+  return response.status(200).send("Hello To GramaphoneStore!");
+});
 
-  //MIDDLEWARE
-  app.use('/records',recordsRoute);
+//MIDDLEWARE
+app.use("/records", recordsRoute);
+
+const PORT = process.env.PORT || 6001;
 
 mongoose
-  .connect(mongoDBURL)
+  .connect(process.env.mongoDBURL)
   .then(() => {
     console.log("App connected to database.");
     app.listen(PORT, () => {

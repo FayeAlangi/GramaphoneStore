@@ -10,7 +10,7 @@ const recordSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    releaseDate: { type: Number, required: true },
+    releaseYear: { type: Number, required: true },
   },
   {  timestamps: true,
   }

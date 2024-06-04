@@ -8,7 +8,7 @@ import { useSnackbar } from "notistack";
 const EditRecord = () => {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
-  const [releaseDate, setReleaseDate] = useState("");
+  const [releaseYear, setreleaseYear] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {enqueueSnackbar} = useSnackbar();
@@ -20,7 +20,7 @@ const EditRecord = () => {
       .then((response) => {
         setTitle(response.data.title);
         setArtist(response.data.artist);
-        setReleaseDate(response.data.releaseDate);
+        setreleaseYear(response.data.releaseYear);
         setLoading(false);
       })
       .catch((error) => {
@@ -33,7 +33,7 @@ const EditRecord = () => {
     const data = {
       title,
       artist,
-      releaseDate,
+      releaseYear,
     };
     setLoading(true);
     axios
@@ -50,11 +50,11 @@ const EditRecord = () => {
       });
   };
   return (
-    <div className="p-4">
+    <div className="font-sans font-light p-4">
       <BackButton />
       <h1 className="text-3xl my-4">Edit Record</h1>
       {loading ? <Spinner /> : ""}
-      <div className="felx flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
+      <div className=" felx flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
           <label className="text-xl mr-4 text-gray-500">Title</label>
           <input
@@ -78,11 +78,11 @@ const EditRecord = () => {
           <input
             className="border-2 border-gray-500 px-4 py-2 w-full"
             type="text"
-            value={releaseDate}
-            onChange={(e) => setReleaseDate(e.target.value)}
+            value={releaseYear}
+            onChange={(e) => setreleaseYear(e.target.value)}
           />
         </div>
-        <button className="p-2 bg-sky-300 m-8" onClick={handleEditRecord}>
+        <button className="bg-yellow-300 hover:bg-sky-400 text-black py-1 px-4 rounded-lg w-full" onClick={handleEditRecord}>
           Save
         </button>
       </div>

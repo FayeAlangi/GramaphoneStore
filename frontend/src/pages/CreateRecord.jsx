@@ -8,7 +8,7 @@ import { useSnackbar } from "notistack";
 const CreateRecord = () => {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
-  const [releaseDate, setReleaseDate] = useState("");
+  const [releaseYear, setreleaseYear] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {enqueueSnackbar} = useSnackbar();
@@ -16,7 +16,7 @@ const CreateRecord = () => {
     const data = {
       title,
       artist,
-      releaseDate,
+      releaseYear,
     };
     setLoading(true);
     axios
@@ -33,7 +33,7 @@ const CreateRecord = () => {
       });
   };
   return (
-    <div className="p-4">
+    <div className="p-4 font-sans font-light">
       <BackButton />
       <h1 className="text-3xl my-4">Create Record</h1>
       {loading ? <Spinner /> : ""}
@@ -61,11 +61,11 @@ const CreateRecord = () => {
           <input
             className="border-2 border-gray-500 px-4 py-2 w-full"
             type="text"
-            value={releaseDate}
-            onChange={(e) => setReleaseDate(e.target.value)}
+            value={releaseYear}
+            onChange={(e) => setreleaseYear(e.target.value)}
           />
         </div>
-        <button className="p-2 bg-sky-300 m-8" onClick={handleSaveRecord}>
+        <button className="bg-yellow-300 hover:bg-sky-400 text-black py-1 px-4 rounded-lg w-full" onClick={handleSaveRecord}>
           Save
         </button>
       </div>

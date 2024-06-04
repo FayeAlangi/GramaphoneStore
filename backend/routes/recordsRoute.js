@@ -11,17 +11,17 @@ router.post("/", async (request, response) => {
     const newRecord = {
       title: request.body.title ?? undefined,
       artist: request.body.artist ?? undefined,
-      releaseDate: request.body.releaseDate ?? undefined,
+      releaseYear: request.body.releaseYear ?? undefined,
     };
 
     if (
       newRecord.title === undefined ||
       newRecord.artist === undefined ||
-      newRecord.releaseDate === undefined
+      newRecord.releaseYear === undefined
     ) {
       return response.status(400).send({
         message:
-          "Send all required fields: title, artist, releaseDate. " +
+          "Send all required fields: title, artist, releaseYear. " +
           "Request body is null or some of its properties are undefined.",
       });
     }
@@ -62,7 +62,7 @@ router.put("/:id", async (request, response) => {
     if (
       !request.body.title ||
       !request.body.artist ||
-      !request.body.releaseDate
+      !request.body.releaseYear
     ) {
       return response.status(400).send({
         message: "Send all required fields: title, author, publishYear",
