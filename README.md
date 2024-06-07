@@ -52,6 +52,9 @@ Make sure you have the following installed on your system:
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account and cluster
 - [Docker](https://www.docker.com/get-started) (if you want to run with Docker)
 - [Docker Compose](https://docs.docker.com/compose/install/) (if you want to run with Docker)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
+
 ### Running the Application Without Docker
 
 1. Clone the repository
@@ -104,14 +107,16 @@ Make sure you have the following installed on your system:
     PORT=5555
     mongoDBURL=your_mongodb_uri
     ```
-4. Build and start the containers
+4. Open Docker Desktop 
+
+5. Build and start the containers
     ```sh
     docker-compose up --build
     ```
 
 ## Usage
 
-1. Frontend: `http://localhost:3000` .In your web browser, use the interface to add, view, update, and delete records.
+1. Frontend: `http://localhost:3000` . In your web browser, use the interface to add, view, update, and delete records.
 3. Backend API: `http://localhost:5555`
 
 ## API Endpoints
