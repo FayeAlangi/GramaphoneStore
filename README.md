@@ -1,13 +1,21 @@
 # GramophoneStore
  
 
-Gramaphone Store is a fullstack web application built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to perform CRUD (Create, Read, Update, Delete) operations to add, edit, and delete records information.
+Gramaphone Store is a fullstack web application, built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to perform CRUD (Create, Read, Update, Delete) operations to add, edit, and delete records information.
+
+The application is containerized using Docker to ensure consistency across different environments and to simplify deployment. Docker allows the application to run in isolated containers, each with its own dependencies and configurations.
+
+Docker Compose is used to manage multi-container Docker applications. It allows you to define and run multi-container applications with ease using a docker-compose.yml file.
+
 
 ## Table of Contents
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Running the Application Without Docker](#running-the-application-without-docker)
+  - [Running the Application With Docker](#running-the-application-with-docker)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
@@ -18,19 +26,32 @@ Gramaphone Store is a fullstack web application built using the MERN stack (Mong
 
 - Add new records
 - View all records in Table view or Card view
+- View details of each record
 - Update existing records
 - Delete records
 - Responsive design
 
 ## Technologies Used
 
-- **MongoDB**: NoSQL database for storing records data
+- **MongoDB Atlas**: Cloud-based NoSQL database for storing records data
 - **Express.js**: Web framework for Node.js
 - **React**: Frontend library for building user interfaces
 - **Node.js**: JavaScript runtime for server-side development
 - **Tailwind CSS**: Utility-first CSS framework for styling
+- **Docker**:Platform for developing, shipping, and running applications inside containers
+- **Docker Compose**: Tool for defining and running multi-container Docker applications
 
-## Installation
+## Getting Started
+
+### Prerequisites
+Make sure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account and cluster
+- [Docker](https://www.docker.com/get-started) (if you want to run with Docker)
+- [Docker Compose](https://docs.docker.com/compose/install/) (if you want to run with Docker)
+### Running the Application Without Docker
 
 1. Clone the repository
     ```sh
@@ -66,11 +87,31 @@ Gramaphone Store is a fullstack web application built using the MERN stack (Mong
     cd ../frontend
     npm run dev
     ```
+### Running the Application With Docker
+
+1. Clone the repository
+    ```sh
+    git clone https://github.com/yourusername/gramaphone-store.git
+    ```
+2. Navigate to the project directory
+    ```sh
+    cd gramaphone-store
+    ```
+3. Set up environment variables
+    - Create a `.env` file in the `backend` directory with the following contents:
+    ```.env
+    PORT=5555
+    MONGO_URI=your_mongodb_uri
+    ```
+4. Build and start the containers
+    ```sh
+    docker-compose up --build
+    ```
 
 ## Usage
 
-1. Navigate to `http://localhost:3000` in your web browser.
-2. Use the interface to add, view, update, and delete records.
+1. Frontend: `http://localhost:3000` .In your web browser, use the interface to add, view, update, and delete records.
+3. Backend API: `http://localhost:5555`
 
 ## API Endpoints
 
@@ -80,13 +121,14 @@ Gramaphone Store is a fullstack web application built using the MERN stack (Mong
 - `PUT /records/:id` - Update a record by ID
 - `DELETE /records/:id` - Delete a record by ID
 
-## Screenshots
 
-![Home Page](screenshots/home.png)
-*Description of the home page screenshot*
+## Video Walkthrough
 
-![Add Record](screenshots/add-record.png)
-*Description of the add record page screenshot*
+Here's a walkthrough of implemented user stories:
+
+<img src="Walkthrough.gif" width=400><br>
+
+GIF created with LICEcap.
 
 ## Contributing
 
