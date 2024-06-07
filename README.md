@@ -1,4 +1,4 @@
-# GramophoneStore
+# GramaphoneStore
  
 
 Gramaphone Store is a fullstack web application, built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to perform CRUD (Create, Read, Update, Delete) operations to add, edit, and delete records information.
