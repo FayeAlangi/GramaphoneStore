@@ -1,6 +1,7 @@
-FROM node:21
+FROM node:22-alpine
 WORKDIR /GramaphoneStore/backend
-COPY ./backend/package*.json ./
+COPY package*.json .
 RUN npm install
-COPY ./backend ./
+COPY . .
+EXPOSE 5555
 CMD ["npm", "run","dev"]
