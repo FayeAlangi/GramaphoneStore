@@ -18,7 +18,7 @@ Docker Compose is used to manage multi-container Docker applications. It allows 
   - [Running the Application With Docker](#running-the-application-with-docker)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Screenshots](#screenshots)
+- [Video Walkthrough](#video-walkthrough)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -52,7 +52,7 @@ Make sure you have the following installed on your system:
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account and cluster
 - [Docker](https://www.docker.com/get-started) (if you want to run with Docker)
 - [Docker Compose](https://docs.docker.com/compose/install/) (if you want to run with Docker)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)(if you want to run with Docker)
 
 
 ### Running the Application Without Docker
