@@ -75,7 +75,7 @@ Make sure you have the following installed on your system:
     - Create a `.env` file in the `backend` directory with the following contents:
     ```.env
     PORT=5555
-    MONGO_URI=your_mongodb_uri
+    mongoDBURL=your_mongodb_uri
     ```
 6. Start the development server
     ```sh
