@@ -40,6 +40,7 @@ Docker Compose is used to manage multi-container Docker applications. It allows 
 - **Tailwind CSS**: Utility-first CSS framework for styling
 - **Docker**:Platform for developing, shipping, and running applications inside containers
 - **Docker Compose**: Tool for defining and running multi-container Docker applications
+- **Postman**: API testing and development tool
 
 ## Getting Started
 
@@ -55,11 +56,11 @@ Make sure you have the following installed on your system:
 
 1. Clone the repository
     ```sh
-    git clone https://github.com/yourusername/gramaphone-store.git
+    git clone https://github.com/FayeAlangi/GramaphoneStore.git
     ```
 2. Navigate to the project directory
     ```sh
-    cd gramaphone-store
+    cd GramaphoneStore
     ```
 3. Install server dependencies
     ```sh
@@ -91,17 +92,17 @@ Make sure you have the following installed on your system:
 
 1. Clone the repository
     ```sh
-    git clone https://github.com/yourusername/gramaphone-store.git
+    git clone https://github.com/FayeAlangi/GramaphoneStore.git
     ```
 2. Navigate to the project directory
     ```sh
-    cd gramaphone-store
+    cd GramaphoneStore
     ```
 3. Set up environment variables
     - Create a `.env` file in the `backend` directory with the following contents:
     ```.env
     PORT=5555
-    MONGO_URI=your_mongodb_uri
+    mongoDBURL=your_mongodb_uri
     ```
 4. Build and start the containers
     ```sh
